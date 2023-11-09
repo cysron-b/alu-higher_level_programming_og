@@ -18,7 +18,8 @@ def next_value(prmString, prmIndex):
 
 def roman_to_int(roman_string):
     result = 0
-    if (roman_string is None or isinstance(roman_string, str) is False):                    return result
+    if (roman_string is None or isinstance(roman_string, str) is False):
+        return result
 
     enum = enumerate(roman_string)
     for index, character in enum:
