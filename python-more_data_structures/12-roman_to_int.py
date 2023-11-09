@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_value(prmCharacter):
-    roman_list = [('I', 1), ('V', 5), ('X', 10), 
+    roman_list = [('I', 1), ('V', 5), ('X', 10),
             ('L', 50), ('C', 100), ('D', 500), ('M', 1000)]
     for item in roman_list:
         character, value = item
@@ -14,10 +14,11 @@ def next_value(prmString, prmIndex):
         return roman_value(prmString[prmIndex + 1])
     else:
         return None
+
+
 def roman_to_int(roman_string):
     result = 0
-    if (roman_string is None or isinstance(roman_string, str) is False):                    
-        return result
+    if (roman_string is None or isinstance(roman_string, str) is False):                    return result
 
     enum = enumerate(roman_string)
     for index, character in enum:
