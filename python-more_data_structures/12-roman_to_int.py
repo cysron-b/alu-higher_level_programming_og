@@ -6,7 +6,7 @@ def roman_value(prmCharacter):
         character, value = item
         if (prmCharacter is character):
             return value
-    return None
+            return None
 
 
 def next_value(prmString, prmIndex):
@@ -31,4 +31,4 @@ def roman_to_int(roman_string):
         else:
             result += (nextValue - currentValue)
             next(enum)
-    return result
+                                                                                                        return result
