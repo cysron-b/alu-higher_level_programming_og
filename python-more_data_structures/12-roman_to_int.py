@@ -18,15 +18,16 @@ def next_value(prmString, prmIndex):
 
 def roman_to_int(roman_string):
     result = 0
-    if (roman_string is None or isinstance(roman_string, str) is False):                    return result
+    if (roman_string is None or isinstance(roman_string, str) is False):                    
+        return result
 
-                                                                                        enum = enumerate(roman_string)
-                                                                                        for index, character in enum:
-                                                                                            currentValue = roman_value(character)
-                                                                                            nextValue = next_value(roman_string, index)
-                                                                                            if nextValue is None or currentValue >= nextValue:
-                                                                                                result += currentValue
-                                                                                            else:
-                                                                                                result += (nextValue - currentValue)
+    enum = enumerate(roman_string)
+    for index, character in enum:
+        currentValue = roman_value(character)
+        nextValue = next_value(roman_string, index)
+        if nextValue is None or currentValue >= nextValue:
+            result += currentValue
+        else:
+            result += (nextValue - currentValue)
             next(enum)
     return result
