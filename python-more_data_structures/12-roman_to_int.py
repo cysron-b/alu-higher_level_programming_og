@@ -18,6 +18,7 @@ def next_value(prmString, prmIndex):
 
 def roman_to_int(roman_string):
     result = 0
+
     if (roman_string is None or isinstance(roman_string, str) is False):
         return result
 
