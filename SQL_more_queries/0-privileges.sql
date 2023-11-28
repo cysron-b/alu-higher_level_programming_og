@@ -1,4 +1,19 @@
--- Script that lists all privileges of the MySQL users
--- Query to list all privileges (GRANT) of the MySQL users
-SHOW GRANTS FOR 'user_0d_1'@'localhost';
-SHOW GRANTS FOR 'user_0d_2'@'localhost';
+#!/bin/bash
+
+# Create user_0d_1
+echo "CREATE USER 'user_0d_1'@'localhost';" | mysql -hlocalhost -uroot -p
+
+# Grant privileges to user_0d_1
+echo "GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';" | mysql -hlocalhost -uroot -p
+
+# Check privileges for user_0d_1
+echo "SHOW GRANTS FOR 'user_0d_1'@'localhost';" | mysql -hlocalhost -uroot -p
+
+# Create user_0d_2
+echo "CREATE USER 'user_0d_2'@'localhost';" | mysql -hlocalhost -uroot -p
+
+# Grant privileges to user_0d_2 (if necessary)
+echo "GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';" | mysql -hlocalhost -uroot -p
+
+# Check privileges for user_0d_2
+echo "SHOW GRANTS FOR 'user_0d_2'@'localhost';" | mysql -hlocalhost -uroot -p
