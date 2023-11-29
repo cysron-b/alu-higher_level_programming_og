@@ -8,8 +8,8 @@ if __name__ == '__main__':
     import sys
 
     url = 'https://api.github.com/user'
-    user = cysron-b
-    xyz = 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
+    user = "cysron-b"
+    xyz = "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"
     authori = HTTPBasicAuth(username=user, password=xyz)
     response = requests.get(url, auth=authori)
     result = response.json()
