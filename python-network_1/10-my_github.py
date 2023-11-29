@@ -12,8 +12,8 @@ if __name__ == "__main__":
         print("Usage: {} <username> <access_token>".format(sys.argv[0]))
         sys.exit(1)
 
-    username = sys.argv[1]
-    access_token = sys.argv[2]
+    username = 'cysron-b'
+    access_token = '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'
     url = 'https://api.github.com/user'
 
     try:
