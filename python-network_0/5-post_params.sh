@@ -1,3 +1,3 @@
 #!/bin/bash
-# Curl sends POST req to URL, display response body
-curl -s -X POST -d "email=test@gmail.com&subject=I will always be here for PLD" "$1"
+# script to post data (url-encoded) to a server
+curl -s -d "email=test@gmail.com&subject=I%20will%20always%20be%20here%20for%20PLD" -X POST "$1"
