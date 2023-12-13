@@ -1,18 +1,30 @@
 #!/usr/bin/python3
-"""Lists all states from the db starting with N."""
+""" Program lists all states with a name
+starting with N from the database"""
 
 
+import sys
 import MySQLdb
-from sys import argv
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3])
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-    mylist = cursor.fetchall()
-    for i in mylist:
-        if i[1][0] == 'N':
-            print(i)
+    conn = MySQLdb.connect(
+       user=sys.argv[1],
+       password=sys.argv[2],
+       db=sys.argv[3],
+       host="localhost",
+       port=3306
+    )
+
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM states \
+        WHERE name LIKE BINARY 'N%' \
+        ORDER BY id ASC")
+
+    states = cursor.fetchall()
+
+    for state in states:
+        print(state)
+
     cursor.close()
-    db.close()
+    conn.close()
